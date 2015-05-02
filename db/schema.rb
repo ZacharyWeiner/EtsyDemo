@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150502034932) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "listings", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -22,7 +25,7 @@ ActiveRecord::Schema.define(version: 20150502034932) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.float    "price"
+    t.decimal  "price"
   end
 
 end
