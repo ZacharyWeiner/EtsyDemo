@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  
+
   devise_for :users
-  resources :listings
+  resources :listings do 
+    resources :orders
+  end
 
   get 'pages/about'
 
@@ -8,6 +12,7 @@ Rails.application.routes.draw do
   root 'listings#index'
 
   get 'seller' => 'listings#seller'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
