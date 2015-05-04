@@ -19,3 +19,4 @@
 
 #Ignore the sensitive Keys 
 /config/application.yml
+config/secrets.yml
