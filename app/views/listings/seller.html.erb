@@ -1,4 +1,38 @@
-<p id="notice"><%= notice %></p>
+<div class="table-responsive">
+  <table class="table table-striped table-bordered">
+  <tr>
+    <th>Image</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Actions</th>
+  </tr>
+  <% @listings.each do |listing| %>
+    <tr>
+      <td><%= image_tag listing.image.url(:thumb) %></td>
+      <td><%= listing.name %></td>
+      <td><%= listing.description %></td>
+      <td><%= number_to_currency(listing.price) %></td>
+      <td>
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle btn-primary" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="false">
+          Actions
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+          <li role="presentation"> <%= link_to "View", listing, class: "btn btn-link"%></li>
+          <li role="presentation"><%= link_to "Edit", edit_listing_path(listing), class: "btn btn-link" %></li>
+          <li role="presentation"><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></li>
+        </ul>
+      </div>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+</div>  
+
+
+
 
 <h1>Listing Listings</h1>
   <div class=" center row">
