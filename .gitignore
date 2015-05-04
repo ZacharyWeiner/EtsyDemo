@@ -18,4 +18,4 @@
 
 
 #Ignore the sensitive Keys 
-/etsydemo/config/application.yml
+/config/application.yml
