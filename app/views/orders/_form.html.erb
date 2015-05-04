@@ -24,6 +24,9 @@
           </ul>
         </div>
       <% end %>
+      <div id="stripe_error" class="alert alert-danger" style="display:none">
+        <noscript>JavaScript is turned off. You must turn JavaScript on in order to complete this transaction.</noscript>
+      </div>
       <div class="form-group">
         <%= f.label :address %><br>
         <%= f.text_field :address, class: "form-control" %>
